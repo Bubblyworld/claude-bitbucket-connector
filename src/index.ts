@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import morgan from "morgan";
 import { randomUUID } from "node:crypto";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
@@ -18,6 +19,7 @@ import { registerTools } from "./tools/bitbucket-api.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(morgan("dev"));
 
 const provider = new BitbucketOAuthProvider();
 const issuerUrl = new URL(config.serverUrl);
