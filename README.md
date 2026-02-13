@@ -10,7 +10,7 @@ Go to your Bitbucket workspace settings > OAuth consumers > Add consumer:
 - **Callback URL**: `https://your-server.com/oauth/bb/callback`
 - **Permissions**: Repository (read/write), Pull requests (read/write), Account (read)
 
-Note the **Key** (client ID) and **Secret**.
+Note the **Key** and **Secret**.
 
 ### 2. Configure
 
@@ -20,7 +20,7 @@ cp .env.example .env
 
 Fill in:
 - `SERVER_URL` — your server's public HTTPS URL (e.g. `https://bb-mcp.example.com`)
-- `BITBUCKET_CLIENT_ID` / `BITBUCKET_CLIENT_SECRET` — from step 1
+- `BITBUCKET_KEY` / `BITBUCKET_SECRET` — from step 1
 - `JWT_SECRET` — a random string for signing tokens
 
 ### 3. Build and Run

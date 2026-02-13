@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 function required(name: string): string {
   const value = process.env[name];
   if (!value) {
@@ -9,7 +11,7 @@ function required(name: string): string {
 export const config = {
   port: parseInt(process.env.PORT || "3000", 10),
   serverUrl: required("SERVER_URL"),
-  bitbucketClientId: required("BITBUCKET_CLIENT_ID"),
-  bitbucketClientSecret: required("BITBUCKET_CLIENT_SECRET"),
+  bitbucketKey: required("BITBUCKET_KEY"),
+  bitbucketSecret: required("BITBUCKET_SECRET"),
   jwtSecret: required("JWT_SECRET"),
 };

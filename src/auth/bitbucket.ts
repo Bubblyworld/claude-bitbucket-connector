@@ -14,7 +14,7 @@ export function buildAuthorizationUrl(
   state: string,
 ): string {
   const url = new URL(AUTHORIZE_URL);
-  url.searchParams.set("client_id", config.bitbucketClientId);
+  url.searchParams.set("client_id", config.bitbucketKey);
   url.searchParams.set("response_type", "code");
   url.searchParams.set("redirect_uri", redirectUri);
   url.searchParams.set("state", state);
@@ -25,7 +25,7 @@ async function tokenRequest(
   body: URLSearchParams,
 ): Promise<BitbucketTokens> {
   const credentials = Buffer.from(
-    `${config.bitbucketClientId}:${config.bitbucketClientSecret}`,
+    `${config.bitbucketKey}:${config.bitbucketSecret}`,
   ).toString("base64");
 
   const res = await fetch(TOKEN_URL, {
