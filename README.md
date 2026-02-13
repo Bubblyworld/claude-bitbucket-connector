@@ -35,6 +35,8 @@ npm start
 
 Go to Claude web > Settings > Connectors > Add custom connector, and enter `https://your-server.com/mcp`. You'll be redirected to Bitbucket to authorize access.
 
+**Important**: Claude web only connects to MCP servers on port 443 (standard HTTPS). If your server listens on a different port, put it behind a reverse proxy that terminates TLS on 443.
+
 ## Tools
 
 All tools proxy to the [Bitbucket Cloud REST API v2](https://developer.atlassian.com/cloud/bitbucket/rest/intro/):

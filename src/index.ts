@@ -17,6 +17,7 @@ import {
 import { registerTools } from "./tools/bitbucket-api.js";
 
 const app = express();
+app.set("trust proxy", 1);
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
