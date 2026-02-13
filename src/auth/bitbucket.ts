@@ -50,6 +50,7 @@ export function exchangeCode(code: string): Promise<BitbucketTokens> {
     new URLSearchParams({
       grant_type: "authorization_code",
       code,
+      redirect_uri: `${config.serverUrl}/oauth/bb/callback`,
     }),
   );
 }
